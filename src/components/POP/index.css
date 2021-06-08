@@ -1,0 +1,26 @@
+.pop_container {
+    margin-top: 50px;
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+}
+.title {
+    font-weight: bold;
+    align-self: center;
+}
+.author {
+    font-size: 18px;
+    font-weight: bold;
+    align-self: center;
+}
+.introduction {
+    font-weight: bold;
+}
+p, li {
+    font-size: 16px;
+}
+.standard_esbmc_command {
+    font-weight: bold;
+}
