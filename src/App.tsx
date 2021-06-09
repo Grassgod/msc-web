@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import TaskList from './task-list'
 import UploadFile from './upload'
 import TaskDetail from './task-detail'
-import Home from './Home'
+import Home from './home'
 
 export default class App extends React.Component {
 
