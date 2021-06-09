@@ -1,26 +1,45 @@
-import React from 'react';
-import './index.css';
-import PopPaper from '../components/POP'
-import Navigation from '../components/menu'
+import React, { Component } from 'react';
+import { Menu } from 'antd';
+import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 
-interface IState {
-    current: string
-}
+const { SubMenu } = Menu;
 
-export default class Home extends React.Component<any, IState> {
-    constructor(props: IState) {
-        super(props);
+class Home extends Component<any, any> {
+    constructor(props: any) {
+        super(props)
         this.state = {
-          current: 'home',
+            current: 'mail'
         }
     }
 
     render() {
+        const { current } = this.state;
         return (
-            <div className="root_container">
-                <Navigation />
-                <PopPaper />
-            </div>
+            <Menu selectedKeys={[current]} mode="horizontal">
+                <Menu.Item key="mail" icon={<MailOutlined />}>
+                Navigation One
+                </Menu.Item>
+                <Menu.Item key="app" disabled icon={<AppstoreOutlined />}>
+                Navigation Two
+                </Menu.Item>
+                <SubMenu key="SubMenu" icon={<SettingOutlined />} title="Navigation Three - Submenu">
+                <Menu.ItemGroup title="Item 1">
+                    <Menu.Item key="setting:1">Option 1</Menu.Item>
+                    <Menu.Item key="setting:2">Option 2</Menu.Item>
+                </Menu.ItemGroup>
+                <Menu.ItemGroup title="Item 2">
+                    <Menu.Item key="setting:3">Option 3</Menu.Item>
+                    <Menu.Item key="setting:4">Option 4</Menu.Item>
+                </Menu.ItemGroup>
+                </SubMenu>
+                <Menu.Item key="alipay">
+                <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                    Navigation Four - Link
+                </a>
+                </Menu.Item>
+            </Menu>
         )
     }
 }
+
+export default Home

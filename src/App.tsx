@@ -1,11 +1,21 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter, Route } from 'react-router-dom';
+import TaskList from './task-list'
+import UploadFile from './upload'
+import TaskDetail from './task-detail'
 import Home from './Home'
 
-function App() {
-  return (
-    <Home />
-  );
-}
+export default class App extends React.Component {
 
-export default App;
+  render() {
+    return (
+      <BrowserRouter>
+        <Route path='/' exact component={Home}></Route>
+        <Route path='/task-list' exact component={TaskList}></Route>
+        <Route path='/task-detail' exact component={TaskDetail}></Route>
+        <Route path='/upload' exact component={UploadFile}></Route>
+      </BrowserRouter>
+    )
+  }
+}
