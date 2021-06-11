@@ -5,9 +5,9 @@ export default class PopPaper extends React.Component {
     render() {
         return (
             <div className="pop_container">
-                <h1 className="title">MSc - Project overview  plan lalalalalal</h1>
+                <h1 className="title">MSc - Project overview  plan test test</h1>
                 <p className="author">He Huajie 10689523</p>
-                <h2 className="introduction">1 &nbsp;&nbsp; Introduction</h2>
+                <h2 className="introduction">1 &nbsp;&nbsp; Introduction Introduction</h2>
                 <p>
                     The  Competition  on  Software  Verification  (SV-COMP)  is  an  annual  comparative  evaluation  offully-automatic software verifiers for C and Javaprograms[1],  and ESBMC is a context-boundedmodel  checker  used  for  the  verification  of  Cprograms[2]. The purpose of this project is to dis-cuss how to help ESBMC achieve good results inSV-COMP.
                 </p>
