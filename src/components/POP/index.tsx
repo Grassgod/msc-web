@@ -5,7 +5,7 @@ export default class PopPaper extends React.Component {
     render() {
         return (
             <div className="pop_container">
-                <h1 className="title">MSc - Project overview  plan</h1>
+                <h1 className="title">MSc - Project overview  plan lalalalalal</h1>
                 <p className="author">He Huajie 10689523</p>
                 <h2 className="introduction">1 &nbsp;&nbsp; Introduction</h2>
                 <p>
