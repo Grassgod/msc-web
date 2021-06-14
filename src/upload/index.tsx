@@ -10,7 +10,7 @@ export default class UploadFile extends React.Component {
     render () {
         const props = {
             name: 'file',
-            action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+            action: 'http://34.105.223.74:8999/uploadFiles',
             headers: {
               authorization: 'authorization-text',
             },
