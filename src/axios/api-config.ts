@@ -29,3 +29,26 @@ instance.interceptors.request.use()
         })
     })
   }
+
+  /**
+ ** post request
+ * @param {String} url [request of url]
+ * @param {Object} data [data of request]
+ * @param {Object} config [config of request]
+ */
+export const post = (url: string, data: any, config = {}) => {
+  return new Promise((resolve, reject) => {
+    instance({
+      method: 'post',
+      url,
+      data,
+      ...config
+    })
+      .then(res => {
+        resolve(res.data)
+      })
+      .catch(err => {
+        reject(err.data)
+      })
+  })
+}

@@ -13,8 +13,8 @@ const columns = [
     },
     {
       title: 'Total Command',
-      dataIndex: 'totalCommand',
-      key: 'totalCommand',
+      dataIndex: 'total',
+      key: 'total',
     },
     {
       title: 'Success',
@@ -22,14 +22,19 @@ const columns = [
       key: 'success',
     },
     {
-      title: 'Failed',
-      dataIndex: 'failed',
-      key: 'failed',
+      title: 'Failure',
+      dataIndex: 'failure',
+      key: 'failure',
     },
     {
       title: 'Timeout',
       dataIndex: 'timeout',
       key: 'timeout',
+    },
+    {
+      title: 'Unknown',
+      dataIndex: 'unknown',
+      key: 'unknown',
     },
     {
       title: 'Detail',
@@ -44,38 +49,20 @@ const columns = [
     },
   ];
 
-const data = [
-    {
-      fileName: 'file_1',
-      totalCommand: 30,
-      success: 30,
-      failed: 0,
-      timeout: 0,
-      detail: 'view'
-    },
-    {
-      fileName: 'file_2',
-      totalCommand: 48,
-      success: 40,
-      failed: 3,
-      timeout: 5,
-      detail: 'view'
-    },
-    {
-      fileName: 'file_3',
-      totalCommand: 38,
-      success: 32,
-      failed: 4,
-      timeout: 2,
-      detail: 'view'
-    },
-  ];
-
-export default class TaskList extends React.Component {
+interface IState {
+  data: []
+}
+export default class TaskList extends React.Component<any, IState> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      data: []
+    } as IState;
+  }
 
   componentDidMount() {
     GetAllFiles().then((resp: any) => {
-      console.log(resp)
+      this.setState({ data: resp });
     })
   }
   
@@ -84,7 +71,7 @@ export default class TaskList extends React.Component {
       <div className="task-container">
         <Navigation />
         <div className="table-container">
-          <Table columns={columns} dataSource={data} />
+          <Table columns={columns} dataSource={this.state.data} />
         </div>
       </div>
     )

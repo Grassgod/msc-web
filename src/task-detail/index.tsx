@@ -1,6 +1,7 @@
 import React from 'react';
 import { PageHeader, Descriptions } from 'antd';
 import { Table } from 'antd';
+import { GetTasksByFileID } from '../axios/api'
 
 const columns = [
     {
@@ -79,6 +80,17 @@ const data = [
 ]
 
 export default class TaskDetail extends React.Component {
+
+  componentDidMount() {
+    const params = {
+      fileID: "527"
+    }
+    GetTasksByFileID(params).then((resp: any) => {
+      console.log(resp)
+    })
+  }
+
+
     render() {
         return (
             <div className="site-page-header-ghost-wrapper">

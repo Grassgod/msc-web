@@ -1,11 +1,11 @@
-import { get } from './api-config'
-
-const BasicUrl = "http://34.105.223.74:8999"
+import { get, post } from './api-config'
 
 // Request address
 const getAllFilesPath = '/getAllFiles'
+const getTasksByFileID = '/getTasksByFileID'
 
 // Request interface
-const GetAllFiles = () => get(BasicUrl + getAllFilesPath)
+const GetAllFiles = () => get(getAllFilesPath)
+const GetTasksByFileID = (params: any) => post(getTasksByFileID, params)
 
-export { GetAllFiles }
+export { GetAllFiles, GetTasksByFileID }
