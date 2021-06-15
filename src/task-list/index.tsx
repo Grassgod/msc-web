@@ -3,6 +3,7 @@ import './index.css';
 import { Table, Space } from 'antd';
 import Navigation from '../components/menu'
 import { Link } from 'react-router-dom'
+import { GetAllFiles } from '../axios/api'
 
 const columns = [
     {
@@ -71,14 +72,21 @@ const data = [
   ];
 
 export default class TaskList extends React.Component {
-    render() {
-        return (
-            <div className="task-container">
-                <Navigation />
-                <div className="table-container">
-                  <Table columns={columns} dataSource={data} />
-                </div>
-            </div>
-        )
-    }
+
+  componentDidMount() {
+    GetAllFiles().then((resp: any) => {
+      console.log(resp)
+    })
+  }
+  
+  render() {
+    return (
+      <div className="task-container">
+        <Navigation />
+        <div className="table-container">
+          <Table columns={columns} dataSource={data} />
+        </div>
+      </div>
+    )
+  }
 }
