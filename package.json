@@ -155,5 +155,5 @@
       "react-app"
     ]
   },
-  "proxy": "localhost:8999"
+  "proxy": "http://34.105.223.74:8999"
 }
