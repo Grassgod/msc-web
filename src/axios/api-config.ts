@@ -36,12 +36,12 @@ instance.interceptors.request.use()
  * @param {Object} data [data of request]
  * @param {Object} config [config of request]
  */
-export const post = (url: string, data: any, config = {}) => {
+export const post = (url: string, params: any, config = {}) => {
   return new Promise((resolve, reject) => {
     instance({
       method: 'post',
       url,
-      data,
+      params,
       ...config
     })
       .then(res => {

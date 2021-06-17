@@ -5,88 +5,68 @@ import { GetTasksByFileID } from '../axios/api'
 
 const columns = [
     {
-      title: 'parameter 1',
-      dataIndex: 'parameter_1',
-      key: 'parameter_1',
+      title: 'command ID',
+      dataIndex: 'commandID',
+      key: 'commandID',
     },
     {
-      title: 'parameter 2',
-      dataIndex: 'parameter_2',
-      key: 'parameter_2',
+      title: 'file ID',
+      dataIndex: 'fileID',
+      key: 'fileID',
     },
     {
-      title: 'parameter 3',
-      dataIndex: 'parameter_3',
-      key: 'parameter_3',
+      title: 'solver',
+      dataIndex: 'solver',
+      key: 'solver',
     },
     {
-      title: 'parameter 4',
-      dataIndex: 'parameter_4',
-      key: 'parameter_4',
+      title: 'encode',
+      dataIndex: 'encode',
+      key: 'encode',
     },
     {
-      title: 'parameter 5',
-      dataIndex: 'parameter_5',
-      key: 'parameter_5',
+      title: 'verificate',
+      dataIndex: 'verificate',
+      key: 'verificate',
     },
     {
-      title: 'Status',
-      dataIndex: 'status',
-      key: 'status',
+      title: 'k',
+      dataIndex: 'k',
+      key: 'k',
+    },
+    {
+      title: 'result',
+      dataIndex: 'result',
+      key: 'result',
+    },
+    {
+      title: 'timeConsumer',
+      dataIndex: 'timeConsumer',
+      key: 'timeConsumer',
     }
 ]
 
-const data = [
-    {
-        parameter_1: 'parameter 1',
-        parameter_2: 'parameter 2',
-        parameter_3: 'parameter 3',
-        parameter_4: 'parameter 4',
-        parameter_5: 'parameter 5',
-        status: 'Success'
-    },
-    {
-        parameter_1: 'parameter 1',
-        parameter_2: 'parameter 2',
-        parameter_3: 'parameter 3',
-        parameter_4: 'parameter 4',
-        parameter_5: 'parameter 5',
-        status: 'Success'
-    },
-    {
-        parameter_1: 'parameter 1',
-        parameter_2: 'parameter 2',
-        parameter_3: 'parameter 3',
-        parameter_4: 'parameter 4',
-        parameter_5: 'parameter 5',
-        status: 'Success'
-    },
-    {
-        parameter_1: 'parameter 1',
-        parameter_2: 'parameter 2',
-        parameter_3: 'parameter 3',
-        parameter_4: 'parameter 4',
-        parameter_5: 'parameter 5',
-        status: 'Failed'
-    },
-    {
-        parameter_1: 'parameter 1',
-        parameter_2: 'parameter 2',
-        parameter_3: 'parameter 3',
-        parameter_4: 'parameter 4',
-        parameter_5: 'parameter 5',
-        status: 'Time out'
-    },
-]
+interface IState {
+  data: []
+}
 
-export default class TaskDetail extends React.Component {
+export default class TaskDetail extends React.Component<any, IState> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      data: []
+    } as IState
+
+  }
 
   componentDidMount() {
     const params = {
       fileID: "527"
     }
     GetTasksByFileID(params).then((resp: any) => {
-      console.log(resp)
+      this.setState({
+        data: resp
+      })
     })
   }
 
@@ -107,7 +87,7 @@ export default class TaskDetail extends React.Component {
                     <Descriptions.Item label="Timed out">1</Descriptions.Item>
                 </Descriptions>
                 </PageHeader>
-                <Table columns={columns} dataSource={data} />
+                <Table columns={columns} dataSource={this.state.data} pagination={{ pageSize: 20 }} />
             </div>
         )
     }
