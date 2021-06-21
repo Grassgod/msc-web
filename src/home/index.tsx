@@ -17,9 +17,11 @@ export default class Home extends React.Component<any, IState> {
 
     render() {
         return (
-            <div className="root_container">
+            <div>
                 <Navigation />
-                <PopPaper />
+                <div className="paper_conatiner">
+                    <PopPaper />
+                </div>
             </div>
         )
     }

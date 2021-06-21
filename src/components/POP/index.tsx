@@ -1,11 +1,12 @@
 import React from 'react';
-import './index.css'
+import './index.css';
+import timeLine from '../../assets/image/time-line.jpg';
 
 export default class PopPaper extends React.Component {
     render() {
         return (
             <div className="pop_container">
-                <h1 className="title">MSc - Project overview  plan test webhook success!!</h1>
+                <h1 className="title">MSc - Project overview  plan</h1>
                 <p className="author">He Huajie 10689523</p>
                 <h2 className="introduction">1 &nbsp;&nbsp; Introduction Introduction</h2>
                 <p>
@@ -181,6 +182,21 @@ export default class PopPaper extends React.Component {
                 <p>
                     This project uses a Gantt chart to represent the plan. We divides the entire project into 6 sections, and each section is subdivided into sub-tasks performed on a weekly basis. These sub-tasks are marked by different color blocks for easy tracking. The milestone is composed of different rectangular color blocks at the bottom, and they represent the time period to reach the milestone.
                 </p>
+                <img src={timeLine} alt="timeline" />
+                <br />
+                <br />
+                <h2 className="introduction">References</h2>
+                <p>[1] Dirk Beyer.  Software verification: 10th comparative evaluation (sv-comp 2021).Tools and Algorithms for theConstruction and Analysis of Systems, 12652:401, 2021.</p>
+                <p>[2] Mikhail R. Gadelha, Felipe R. Monteiro, Jeremy Morse, Lucas C. Cordeiro, Bernd Fischer, and Denis A. Nicole.Esbmc 5.0: An industrial-strength c model checker.  InProceedings of the 33rd ACM/IEEE International Con-ference on Automated Software Engineering, ASE 2018, page 888–891, New York, NY, USA, 2018. Associationfor Computing Machinery.</p>
+                <p>[3] Jie Cai, Jiawei Luo, Shulin Wang, and Sheng Yang.  Feature selection in machine learning: A new perspective.Neurocomputing, 300:70–79, 2018.</p>
+                <p>[4] Vipin Kumar and Sonajharia Minz. Feature selection: a literature review.SmartCR, 4(3):211–229, 2014.</p>
+                <p>[5] Ayon Dey. Machine learning algorithms: a review.International Journal of Computer Science and InformationTechnologies, 7(3):1174–1179, 2016.</p>
+                <p>[6] Jafar Alzubi, Anand Nayyar, and Akshi Kumar.  Machine learning from theory to algorithms: an overview.  InJournal of physics: conference series, volume 1142, page 012012. IOP Publishing, 2018.</p>
+                <p>[7] Jiang Su and Harry Zhang. A fast decision tree learning algorithm. InAAAI, volume 6, pages 500–505, 2006.</p>
+                <p>[8] S Rasoul Safavian and David Landgrebe.  A survey of decision tree classifier methodology.IEEE transactionson systems, man, and cybernetics, 21(3):660–674, 1991.</p>
+                <p>[9] Derek A Pisner and David M Schnyer. Support vector machine. InMachine Learning, pages 101–121. Elsevier,2020.</p>
+                <p>[10] Amanpreet Singh, Narina Thakur, and Aakanksha Sharma.   A review of supervised machine learning algo-rithms. In2016 3rd International Conference on Computing for Sustainable Global Development (INDIACom),pages 1310–1315. Ieee, 2016.</p>
+                <p>[11] Gongde Guo, Hui Wang, David Bell, Yaxin Bi, and Kieran Greer. Knn model-based approach in classification.InOTM Confederated International Conferences” On the Move to Meaningful Internet Systems”, pages 986–996. Springer, 2003.</p>
             </div>
         )
     }

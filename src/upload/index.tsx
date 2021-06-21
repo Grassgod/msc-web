@@ -1,40 +1,13 @@
 import React from 'react';
-import { Upload, message, Button } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
-import Navigation from '../components/menu'
 import './index.css'
-
 
 export default class UploadFile extends React.Component {
 
-    render () {
-        const props = {
-            name: 'file',
-            action: 'http://34.105.223.74:8999/uploadFiles',
-            headers: {
-              authorization: 'authorization-text',
-            },
-            onChange(info:any) {
-              if (info.file.status !== 'uploading') {
-                console.log(info.file, info.fileList);
-              }
-              if (info.file.status === 'done') {
-                message.success(`${info.file.name} file uploaded successfully`);
-              } else if (info.file.status === 'error') {
-                message.error(`${info.file.name} file upload failed.`);
-              }
-            },
-          };
-        return (
-            <div className="task-container">
-                <Navigation />
-                <div className="upload-container">
-                    <Upload {...props}>
-                        <Button icon={<UploadOutlined />}>Click to Upload</Button>
-                    </Upload>
-                </div>
-                <Button className="submit-file" type="primary">Submit File</Button>
-            </div>
-        )
-    }
+  render () {
+    return (
+      <div>
+
+      </div>
+    )
+  }
 }
