@@ -11,10 +11,10 @@ export default class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <Route path='/' exact component={Home}></Route>
-        <Route path='/task-list' exact component={TaskList}></Route>
-        <Route path='/task-detail' exact component={TaskDetail}></Route>
-        <Route path='/upload' exact component={UploadFile}></Route>
+        <Route path='/' exact component={Home} />
+        <Route path='/task-list' exact component={TaskList} />
+        <Route path='/task-detail' exact component={TaskDetail} />
+        <Route path='/upload' exact component={UploadFile} />
       </BrowserRouter>
     )
   }

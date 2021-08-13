@@ -68,7 +68,7 @@ export default class TaskList extends React.Component<any, IState> {
   
   render() {
     return (
-      <div className="task-container">
+      <div>
         <Navigation />
         <div className="table-container">
           <Table columns={columns} dataSource={this.state.data} />
